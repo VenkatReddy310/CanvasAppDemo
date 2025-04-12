@@ -12,11 +12,9 @@
                  Sfdc.canvas.oauth.login(
                      {uri : uri,
                          params: {
-                             grant_type:"client_credentials",
-                             client_id : "3MVG9wt4IL4O5wvLuGYK79WmqVBkA44NhhkuRyT3SB3hhfmqfNuVPaPoHRd5fHm3LoMelVRVnIR_OfvlT1QRh",
-                             client_secret: "1D327237EF0C4CB8FE5DB9675AE52AAEC0F535183806BEEBCFFC878B57E96064",
-                              redirect_uri : encodeURIComponent(
-                                 "https://d5i000009mhx0eao-dev-ed.my.salesforce.com")
+                             response_type: 'token',
+                             client_id: '3MVG9wt4IL4O5wvLuGYK79WmqVBkA44NhhkuRyT3SB3hhfmqfNuVPaPoHRd5fHm3LoMelVRVnIR_OfvlT1QRh',
+                             redirect_uri: 'https://d5i000009mhx0eao-dev-ed.my.salesforce.com/'
                          }});
  
              }
