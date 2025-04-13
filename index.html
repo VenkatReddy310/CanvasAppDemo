@@ -49,11 +49,14 @@
          <a id="login" href="#">Login</a><br/>
      </div>
 
+     <script>
   window.addEventListener('message', function(event) {
     if (event.data.type === 'customMessage') {
         console.log("Received data from Aura:", event.data.data);
     }
 }, false);
+</script>
+      
 
  </body>
  </html>
