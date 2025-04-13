@@ -48,5 +48,12 @@
      <div>
          <a id="login" href="#">Login</a><br/>
      </div>
+
+  window.addEventListener('message', function(event) {
+    if (event.data.type === 'customMessage') {
+        console.log("Received data from Aura:", event.data.data);
+    }
+}, false);
+
  </body>
  </html>
