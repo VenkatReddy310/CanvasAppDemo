@@ -56,7 +56,11 @@
     }
 }, false);
 </script>
-      
+ <script>
+  Sfdc.canvas.client.refresh(function(data) {
+    console.log("Full canvas context:", JSON.stringify(data, null, 2));
+});
+   </script>   
 
  </body>
  </html>
