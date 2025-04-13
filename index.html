@@ -68,6 +68,9 @@
           console.log("Received data from Aura (postMessage):", event.data.data);
       }
     }, false);
+
+      parent.postMessage({ type: 'customMessage', data: { result: "Hello from Canvas App" } }, "*");
+
   </script>
 
  </body>
