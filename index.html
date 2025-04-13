@@ -1,6 +1,6 @@
 <html>
  <head>
- <script src="https://d5i000009mhx0eao-dev-ed.my.salesforce.com/canvas/sdk/js/36.0/canvas-all.js"></script>
+ <script src="https://d5i000009mhx0eao-dev-ed.my.salesforce.com/canvas/sdk/js/63.0/canvas-all.js"></script>
  </head>
  <body>
      <script>
@@ -50,21 +50,22 @@
      </div>
 
      <script>
-  window.addEventListener('message', function(event) {
-    if (event.data.type === 'customMessage') {
-        console.log("Received data from Aura:", event.data.data);
-    }
-}, false);
-</script>
- <script>
-  Sfdc.canvas.client.refresh(function(data) {
-    console.log("Full canvas context:", JSON.stringify(data, null, 2));
-});
-   </script>   
 
-   <script>
-  Sfdc.canvas.client.refreshSignedRequest(callback);
-   </script>  
+      <script>
+    Sfdc.canvas.onReady(function() {
+      Sfdc.canvas.client.refreshSignedRequest(function(response) {
+        console.log("Canvas context:", response);
+        const params = response.context.environment.parameters;
+        document.getElementById("output").innerHTML = "Parameters: " + JSON.stringify(params);
+      });
+    });
+
+    window.addEventListener('message', function(event) {
+      if (event.data.type === 'customMessage') {
+          console.log("Received data from Aura (postMessage):", event.data.data);
+      }
+    }, false);
+  </script>
 
  </body>
  </html>
