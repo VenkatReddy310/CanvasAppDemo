@@ -60,7 +60,14 @@
       console.log("Parameters received from Aura:", params);
      console.log("Canvas context:", response);
       document.getElementById("output").innerText = JSON.stringify(params, null, 2);
+     
+     const el = document.createElement("div");
+        el.textContent = "Canvas Parameters: " + JSON.stringify(params);
+        document.body.appendChild(el);
     }
+   } else {
+        console.warn("⚠️ No parameters received in environment.");
+      }
   });
 });
 
