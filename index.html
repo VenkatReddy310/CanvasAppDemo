@@ -58,6 +58,7 @@
     if (response && response.context && response.context.environment) {
       const params = response.context.environment.parameters;
       console.log("Parameters received from Aura:", params);
+     console.log("Canvas context:", response);
       document.getElementById("output").innerText = JSON.stringify(params, null, 2);
     }
   });
